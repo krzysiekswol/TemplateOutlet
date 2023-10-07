@@ -1,0 +1,14 @@
+<p>template-ref works!</p>
+
+<ng-template #templateText1 let-hello="$implicit">
+    <p>Dear {{hello.name}} {{hello.message}}</p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="templateText1; context: {$implicit: helloMsg}"></ng-container>
+
+<ng-template #testTemplate let-name="name">
+    <div>My name is {{name}}.</div>
+  </ng-template>
+  
+  <ng-container *ngTemplateOutlet="testTemplate; context: { name: 'John' }"></ng-container>
+  <ng-container *ngTemplateOutlet="testTemplate; context: { name: 'Jenny' }"></ng-container>
