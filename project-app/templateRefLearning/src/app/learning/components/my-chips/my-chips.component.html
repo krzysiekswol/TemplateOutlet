@@ -1,0 +1,25 @@
+<header>
+    <h2>Component Wrapper</h2>
+</header>
+<section class="my-chips">
+   <app-chip [template]="template2" [data]="[{name: 'Jan'}, {name: 'Paweł'}]"></app-chip>
+</section>
+<section class="my-chips">
+    <app-chip [template]="template3" [data]="[{name: 'Piotr'}, {name: 'Jędrzej'}]"></app-chip>
+</section>
+
+<ng-template #template2 let-items>
+    <ul>
+        <li *ngFor="let item of items">
+            <span>{{item.name}}</span>
+        </li>
+    </ul>
+</ng-template>
+
+<ng-template #template3 let-items>
+    <ol>
+        <li *ngFor="let item of items">
+            <span>{{item.name}}</span>
+        </li>
+    </ol>
+</ng-template>
